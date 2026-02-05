@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --brand: #219cc8;
+}
+
+/* Make native links use brand color by default */
+a {
+  color: var(--brand);
+}
+
+/* Typewriter cursor + headline entrance */
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--brand);
+  margin-left: 8px;
+  vertical-align: bottom;
+  animation: tw-blink 1s steps(2) infinite;
+}
+
+@keyframes tw-blink {
+  50% { opacity: 0 }
+}
+
+.headline-entrance {
+  animation: headline-slide 550ms ease both;
+}
+
+@keyframes headline-slide {
+  from { opacity: 0; transform: translateY(8px) }
+  to { opacity: 1; transform: translateY(0) }
+}
